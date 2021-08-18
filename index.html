@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>Path finder</title>
+    <style>
+      main > h1 {
+        text-align: center;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(36, auto);
+        padding: 10px;
+        pointer-events: none;
+      }
+      .grid-item {
+        background-color: white;
+        /* border: 1px solid black; */
+        padding: 7px;
+        font-size: 30px;
+        text-align: center;
+      }
+      .grid-item:hover {
+        cursor: pointer;
+        background-color: rgb(255, 92, 16);
+      }
+      .nopath-msg {
+        position: fixed;
+        top: 50%;
+        left: 36%;
+        margin-top: -50px;
+        margin-left: -100px;
+        display: none;
+      }
+      main {
+        text-align: center;
+      }
+      small.mx-auto.text-warning.finish-time {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <main>
+      <h1 id="leading-msg" class="text-warning mx-auto">Leading Map.....</h1>
+      <small class="mx-auto text-light"
+        >Path finder visualizer using Breath-First-Search Algorithm</small
+      >
+      <small class="mx-auto text-warning finish-time"><b>Finish Time : </b></small>
+      <h3 class="nopath-msg display-2 bg-dark p-4 text-light rounded">
+        No Path Found
+      </h3>
+      <div
+        class="grid-container w-75 mx-auto animate__animated animate__swing"
+      ></div>
+      <div class="col-xs-1-12">
+        <div class="row animate__animated animate__flash">
+          <button id="start-btn" class="btn btn-success ml-auto" disabled>
+            START
+          </button>
+          <button id="clear-btn" class="btn btn-danger mr-auto ml-4">
+            Clear
+          </button>
+          <button id="obstacles-btn" class="btn btn-primary mr-auto" disabled>
+            Generate Obstacles
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
